@@ -1,0 +1,20 @@
+<div *ngIf="cart" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeDetail()">&times;</span>
+    <div class="cart-detail">
+      <h2>Cart Details</h2>
+      <p><strong>User Name:</strong> {{ cart.user.firstname }} {{ cart.user.lastname }}</p>
+      <p><strong>Email:</strong> {{ cart.user.email }}</p>
+      <p><strong>Address:</strong> {{ cart.user.city }}, {{ cart.user.state }} {{ cart.user.zipcode }}</p>
+      <p><strong>Phone:</strong> {{ cart.user.phone }}</p>
+      <h3>Products</h3>
+      <ul>
+        <li *ngFor="let item of cart.items">
+          <p><strong>Product Name:</strong> {{ item.productName }}</p>
+          <p><strong>Description:</strong> {{ item.productDescription }}</p>
+          <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

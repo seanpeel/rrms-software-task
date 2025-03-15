@@ -1,0 +1,24 @@
+<div class="header">
+  <button class="home-button" (click)="goHome()">
+    <img src="assets/home-icon.svg" alt="Home" class="home-icon">
+  </button>
+</div>
+
+<div class="container mx-auto mt-10">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div *ngFor="let product of products" class="card" (click)="showProductDetail(product)">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">Price: {{ product.price }}</p>
+        <p class="card-text">Category: {{ product.category }}</p>
+        <p class="card-text">In Stock: {{ product.stock }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="selectedProduct" class="modal">
+  <div class="modal-content">
+    <app-product-detail [product]="selectedProduct" (close)="closeProductDetail()"></app-product-detail>
+  </div>
+</div>

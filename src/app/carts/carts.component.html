@@ -1,0 +1,32 @@
+<div class="header">
+  <button class="home-button" (click)="goHome()">
+    <img src="assets/home-icon.svg" alt="Home" class="home-icon">
+  </button>
+</div>
+
+<div class="container mx-auto mt-10">
+  <table class="table-auto w-full">
+    <thead>
+      <tr>
+        <th>User Name</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Number of Items</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cart of carts" (click)="showCartDetail(cart.id)">
+        <td>{{ cart.user?.firstname }} {{ cart.user?.lastname }}</td>
+        <td>{{ cart.date }}</td>
+        <td>{{ cart.status }}</td>
+        <td>{{ cart.items.length }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="selectedCart" class="modal">
+  <div class="modal-content">
+    <app-cart-detail [cart]="selectedCart" (close)="closeCartDetail()"></app-cart-detail>
+  </div>
+</div>

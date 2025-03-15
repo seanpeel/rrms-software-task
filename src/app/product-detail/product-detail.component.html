@@ -1,0 +1,15 @@
+<div *ngIf="product" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeDetail()">&times;</span>
+    <div class="product-detail">
+      <h2>{{ product.name }}</h2>
+      <p>Price: {{ product.price }}</p>
+      <p>Category: {{ product.category }}</p>
+      <p>Description: {{ product.description }}</p>
+      <p>In Stock: {{ product.stock }}</p>
+      <p>Rating: {{ product.rating.rate }} ({{ product.reviews }} reviews)</p>
+      <p>SKU: {{ product.sku }}</p>
+      <p>Image URL: {{ product.image_url }}</p>
+    </div>
+  </div>
+</div>
