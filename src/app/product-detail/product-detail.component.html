@@ -3,13 +3,13 @@
     <span class="close" (click)="closeDetail()">&times;</span>
     <div class="product-detail">
       <h2>{{ product.name }}</h2>
-      <p>Price: {{ product.price }}</p>
-      <p>Category: {{ product.category }}</p>
-      <p>Description: {{ product.description }}</p>
-      <p>In Stock: {{ product.stock }}</p>
-      <p>Rating: {{ product.rating.rate }} ({{ product.reviews }} reviews)</p>
-      <p>SKU: {{ product.sku }}</p>
-      <p>Image URL: {{ product.image_url }}</p>
+      <p><strong>Price:</strong> {{ product.price }}</p>
+      <p><strong>Category:</strong> {{ product.category }}</p>
+      <p><strong>In Stock:</strong> {{ product.stock }}</p>
+      <p><strong>Rating:</strong> {{ product.rating.rate }} ({{ product.rating.count }} reviews)</p>
+      <p><strong>SKU:</strong> {{ product.sku }}</p>
+      <p><strong>Description:</strong> {{ product.description }}</p>
+      <p><strong>Image URL:</strong> {{ product.image_url }}</p>
     </div>
   </div>
 </div>

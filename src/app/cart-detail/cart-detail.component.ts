@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,6 +11,13 @@ import { CommonModule } from '@angular/common';
 export class CartDetailComponent {
   @Input() cart: any;
   @Output() close = new EventEmitter<void>();
+
+  constructor() {}
+
+  @HostListener('document:keydown.escape', ['$event'])
+  onEscapePress(event: KeyboardEvent): void {
+    this.closeDetail();
+  }
 
   closeDetail(): void {
     this.close.emit();

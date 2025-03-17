@@ -15,12 +15,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let cart of carts" (click)="showCartDetail(cart.id)">
-        <td>{{ cart.user?.firstname }} {{ cart.user?.lastname }}</td>
-        <td>{{ cart.date }}</td>
-        <td>{{ cart.status }}</td>
-        <td>{{ cart.items.length }}</td>
+      <tr *ngIf="loading">
+        <td colspan="4" class="text-center">Loading...</td>
       </tr>
+      <ng-container *ngIf="!loading">
+        <tr *ngFor="let cart of carts" (click)="showCartDetail(cart.id)">
+          <td>{{ cart.user?.firstname }} {{ cart.user?.lastname }}</td>
+          <td>{{ cart.date }}</td>
+          <td>{{ cart.status }}</td>
+          <td>{{ cart.items.length }}</td>
+        </tr>
+      </ng-container>
     </tbody>
   </table>
 </div>

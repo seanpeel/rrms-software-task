@@ -57,3 +57,7 @@
 .cart-detail button:hover {
   background-color: #0056b3;
 }
+
+.products-header {
+  margin-top: 20px; /* Adjust the value as needed */
+}

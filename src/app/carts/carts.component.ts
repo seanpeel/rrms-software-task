@@ -16,6 +16,7 @@ export class CartsComponent implements OnInit {
   users: any[] = [];
   products: any[] = [];
   selectedCart: any = null;
+  loading: boolean = true;
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -77,6 +78,7 @@ export class CartsComponent implements OnInit {
           return null;
         })
         .filter(cart => cart !== null);
+      this.loading = false;
     }
   }
 
