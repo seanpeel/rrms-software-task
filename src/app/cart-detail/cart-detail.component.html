@@ -1,16 +1,16 @@
-<div *ngIf="cart" class="modal">
-  <div class="modal-content">
-    <span class="close" (click)="closeDetail()">&times;</span>
-    <div class="cart-detail">
-      <h2>Cart Details</h2>
+<div *ngIf="cart" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
+  <div class="bg-white p-5 rounded max-w-md w-full relative">
+    <span class="absolute top-2 right-2 cursor-pointer text-2xl" (click)="closeDetail()">&times;</span>
+    <div class="text-center">
+      <h2 class="text-2xl font-bold">Cart Details</h2>
       <p><strong>User Name:</strong> {{ cart.user.firstname }} {{ cart.user.lastname }}</p>
       <p><strong>Email:</strong> {{ cart.user.email }}</p>
       <p><strong>Address:</strong> {{ cart.user.city }}, {{ cart.user.state }} {{ cart.user.zipcode }}</p>
       <p><strong>Phone:</strong> {{ cart.user.phone }}</p>
 
-      <h3 class="products-header">Products</h3>
-      <ul>
-        <li *ngFor="let item of cart.items">
+      <h3 class="text-xl font-semibold mt-4">Products</h3>
+      <ul class="list-none p-0">
+        <li *ngFor="let item of cart.items" class="mb-4">
           <p><strong>Product Name:</strong> {{ item.productName }}</p>
           <p><strong>Description:</strong> {{ item.productDescription }}</p>
           <p><strong>Quantity:</strong> {{ item.quantity }}</p>

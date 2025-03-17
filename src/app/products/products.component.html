@@ -1,33 +1,33 @@
-<div class="header">
-  <button class="home-button" (click)="goHome()">
-    <img src="assets/home-icon.svg" alt="Home" class="home-icon">
+<div class="flex items-center p-2 bg-gray-100 border-b border-gray-300">
+  <button class="bg-none border-none cursor-pointer mr-2" (click)="goHome()">
+    <img src="assets/home-icon.svg" alt="Home" class="w-6 h-6">
   </button>
 </div>
 
 <div class="container mx-auto mt-10">
-  <div class="add-product-container">
-    <button class="add-product-button" (click)="openAddProductForm()">Add Product</button>
+  <div class="flex justify-center mb-5">
+    <button class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700" (click)="openAddProductForm()">Add Product</button>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-    <div *ngFor="let product of products" class="card" (click)="showProductDetail(product)">
-      <div class="card-body">
-        <h5 class="card-title">{{ product.name }}</h5>
-        <p class="card-text">Price: {{ product.price }}</p>
-        <p class="card-text">Category: {{ product.category }}</p>
-        <p class="card-text">In Stock: {{ product.stock }}</p>
+    <div *ngFor="let product of products" class="bg-white p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer" (click)="showProductDetail(product)">
+      <div class="text-center">
+        <h5 class="text-xl font-semibold mb-2">{{ product.name }}</h5>
+        <p class="text-gray-600">Price: {{ product.price }}</p>
+        <p class="text-gray-600">Category: {{ product.category }}</p>
+        <p class="text-gray-600">In Stock: {{ product.stock }}</p>
       </div>
     </div>
   </div>
 </div>
 
-<div *ngIf="selectedProduct" class="modal">
-  <div class="modal-content">
+<div *ngIf="selectedProduct" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
+  <div class="bg-white p-5 rounded max-w-md w-full">
     <app-product-detail [product]="selectedProduct" (close)="closeProductDetail()"></app-product-detail>
   </div>
 </div>
 
-<div *ngIf="showAddProductForm" class="modal">
-  <div class="modal-content">
+<div *ngIf="showAddProductForm" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
+  <div class="bg-white p-5 rounded max-w-md w-full">
     <app-add-product (close)="closeAddProductForm()"></app-add-product>
   </div>
 </div>

@@ -1,55 +1,57 @@
-<div class="container mx-auto mt-10">
+<div class="container mx-auto mt-10 p-5 bg-white rounded shadow-lg">
   <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="name">Name <span class="required">*</span></label>
-      <input id="name" formControlName="name" type="text" class="form-control">
-      <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched" class="error">
+    <div class="mb-4">
+      <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name <span class="text-red-500">*</span></label>
+      <input id="name" formControlName="name" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched" class="text-red-500 text-xs mt-1">
         Name is required.
       </div>
     </div>
-    <div class="form-group">
-      <label for="price">Price <span class="required">*</span></label>
-      <input id="price" formControlName="price" type="text" class="form-control">
-      <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched" class="error">
+    <div class="mb-4">
+      <label for="price" class="block text-gray-700 text-sm font-bold mb-2">Price <span class="text-red-500">*</span></label>
+      <input id="price" formControlName="price" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched" class="text-red-500 text-xs mt-1">
         Price is required.
       </div>
     </div>
-    <div class="form-group">
-      <label for="category">Category <span class="required">*</span></label>
-      <input id="category" formControlName="category" type="text" class="form-control">
-      <div *ngIf="productForm.get('category')?.invalid && productForm.get('category')?.touched" class="error">
+    <div class="mb-4">
+      <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Category <span class="text-red-500">*</span></label>
+      <input id="category" formControlName="category" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      <div *ngIf="productForm.get('category')?.invalid && productForm.get('category')?.touched" class="text-red-500 text-xs mt-1">
         Category is required.
       </div>
     </div>
-    <div class="form-group">
-      <label for="description">Description <span class="required">*</span></label>
-      <input id="description" formControlName="description" type="text" class="form-control">
-      <div *ngIf="productForm.get('description')?.invalid && productForm.get('description')?.touched" class="error">
+    <div class="mb-4">
+      <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description <span class="text-red-500">*</span></label>
+      <input id="description" formControlName="description" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      <div *ngIf="productForm.get('description')?.invalid && productForm.get('description')?.touched" class="text-red-500 text-xs mt-1">
         Description is required.
       </div>
     </div>
-    <div class="form-group">
-      <label for="inStock">In Stock <span class="required">*</span></label>
-      <input id="inStock" formControlName="inStock" type="text" class="form-control">
-      <div *ngIf="productForm.get('inStock')?.invalid && productForm.get('inStock')?.touched" class="error">
+    <div class="mb-4">
+      <label for="inStock" class="block text-gray-700 text-sm font-bold mb-2">In Stock <span class="text-red-500">*</span></label>
+      <input id="inStock" formControlName="inStock" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      <div *ngIf="productForm.get('inStock')?.invalid && productForm.get('inStock')?.touched" class="text-red-500 text-xs mt-1">
         In Stock is required.
       </div>
     </div>
-    <div class="form-group">
-      <label for="rating">Rating <span class="required">*</span></label>
-      <input id="rating" formControlName="rating" type="text" class="form-control">
-      <div *ngIf="productForm.get('rating')?.invalid && productForm.get('rating')?.touched" class="error">
+    <div class="mb-4">
+      <label for="rating" class="block text-gray-700 text-sm font-bold mb-2">Rating <span class="text-red-500">*</span></label>
+      <input id="rating" formControlName="rating" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      <div *ngIf="productForm.get('rating')?.invalid && productForm.get('rating')?.touched" class="text-red-500 text-xs mt-1">
         Rating is required.
       </div>
     </div>
-    <div class="form-group">
-      <label for="sku">SKU <span class="required">*</span></label>
-      <input id="sku" formControlName="sku" type="text" class="form-control">
-      <div *ngIf="productForm.get('sku')?.invalid && productForm.get('sku')?.touched" class="error">
+    <div class="mb-4">
+      <label for="sku" class="block text-gray-700 text-sm font-bold mb-2">SKU <span class="text-red-500">*</span></label>
+      <input id="sku" formControlName="sku" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      <div *ngIf="productForm.get('sku')?.invalid && productForm.get('sku')?.touched" class="text-red-500 text-xs mt-1">
         SKU is required.
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Add Product</button>
-    <button type="button" class="btn btn-secondary" (click)="closeForm()">Cancel</button>
+    <div class="flex items-center justify-between">
+      <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add Product</button>
+      <button type="button" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" (click)="closeForm()">Cancel</button>
+    </div>
   </form>
 </div>
